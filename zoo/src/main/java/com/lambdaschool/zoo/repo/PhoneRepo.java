@@ -1,5 +1,9 @@
 package com.lambdaschool.zoo.repo;
 
-public interface PhoneRepo
+import com.lambdaschool.zoo.model.Phone;
+import org.springframework.data.repository.CrudRepository;
+
+public interface PhoneRepo extends CrudRepository<Phone, Long>
 {
+
 }
