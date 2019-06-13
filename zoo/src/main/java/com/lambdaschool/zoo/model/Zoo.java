@@ -17,14 +17,11 @@ public class Zoo
     @OneToMany(mappedBy = "zoo")
     private List<Phone> phones = new ArrayList<>();
 
-    public Zoo()
-    {
-    }
-
-    public Zoo(String zooname)
-    {
-        this.zooname = zooname;
-    }
+    @ManyToMany
+    @JoinTable(name = "zooanimals",
+            joinColumns = {@JoinColumn(name = "zooid")},
+            inverseJoinColumns = {@JoinColumn(name = "animalid")})
+    private List<Animal> animals = new ArrayList<>();
 
     public long getZooid()
     {

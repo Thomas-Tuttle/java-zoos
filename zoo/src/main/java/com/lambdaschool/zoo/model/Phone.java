@@ -38,6 +38,13 @@ public class Phone
         this.zoo = zoo;
     }
 
+    public Phone(String phonetype, String phonenumber, Zoo zoo)
+    {
+        this.phonetype = phonetype;
+        this.phonenumber = phonenumber;
+        this.zoo = zoo;
+    }
+
     public long getPhoneid()
     {
         return phoneid;

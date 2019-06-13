@@ -14,11 +14,8 @@ public class Animal
     private String animaltype;
 
     @ManyToMany
-    @JoinTable(name = "zooanimals",
-                joinColumns = {@JoinColumn(name = "animalid")},
-                inverseJoinColumns = {@JoinColumn(name = "phoneid")})
     private List<Phone> phones = new ArrayList<>();
-
+//
     public Animal()
     {
     }
@@ -27,7 +24,7 @@ public class Animal
     {
         this.animaltype = animaltype;
     }
-
+//
     public long getAnimalid()
     {
         return animalid;
