@@ -1,6 +1,7 @@
 package com.lambdaschool.zoo.repo;
 
 import com.lambdaschool.zoo.model.Zoo;
+import com.lambdaschool.zoo.view.AnimalCount;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -21,4 +22,6 @@ public interface ZooRepo extends CrudRepository<Zoo, Long>
     @Query(value = "INSERT INTO zooanimals (zooid, animalid) VALUES (:zooid, :animalid)", nativeQuery = true)
     void saveZooAnimalCombo(long zooid, long animalid);
 
+    @Query(value = "SELECT COUNT(*) as count FROM zooanimals WHERE zooid = :zooid AND animalid = :animalid", nativeQuery = true)
+    AnimalCount checkZooAnimalCombo(long zooid, long animalid);
 }
